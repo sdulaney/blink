@@ -30,10 +30,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "BKUserConfigurationManager.h"
+#import "BKDefaults.h"
 
 NSString *const BKUserConfigiCloud = @"iCloudSync";
 NSString *const BKUserConfigiCloudKeys = @"iCloudKeysSync";
 NSString *const BKUserConfigAutoLock = @"autoLock";
+NSString *const BKUserConfigShowSmartKeysWithXKeyBoard = @"ShowSmartKeysWithXKeyBoard";
 
 @implementation BKUserConfigurationManager
 
@@ -63,4 +65,25 @@ NSString *const BKUserConfigAutoLock = @"autoLock";
   return NO;
 }
 
+
++ (UIKeyModifierFlags)shortCutModifierFlags{
+  NSDictionary *bkModifierMaps = @{
+                                   BKKeyboardModifierCtrl : [NSNumber numberWithInt:UIKeyModifierControl],
+                                   BKKeyboardModifierAlt : [NSNumber numberWithInt:UIKeyModifierAlternate],
+                                   BKKeyboardModifierCmd : [NSNumber numberWithInt:UIKeyModifierCommand],
+                                   BKKeyboardModifierCaps : [NSNumber numberWithInt:UIKeyModifierAlphaShift],
+                                   BKKeyboardModifierShift : [NSNumber numberWithInt:UIKeyModifierShift]
+                                   };
+  if([[BKDefaults keyboardFuncTriggers]objectForKey:@"Shortcuts"])
+  {
+    NSArray *shortCutTriggers = [[BKDefaults keyboardFuncTriggers]objectForKey:@"Shortcuts"];
+    UIKeyModifierFlags modifiers = 0;
+    for (NSString *trigger in shortCutTriggers) {
+      NSNumber *modifier = bkModifierMaps[trigger];
+      modifiers = modifiers | modifier.intValue;
+    }
+    return  modifiers;
+  }
+  return UIKeyModifierCommand;
+}
 @end

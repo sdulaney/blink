@@ -55,6 +55,8 @@ extern NSString * const TermViewAutoRepeateSeq;
 @property (nonatomic, readonly, weak) NSString *title;
 @property (readwrite, copy) UITextRange *selectedTextRange;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
+@property (nonatomic, assign) int rowCount;
+@property (nonatomic, assign) int columnCount;
 
 - (id)initWithFrame:(CGRect)frame;
 - (void)setScrollEnabled:(BOOL)scroll;
@@ -72,5 +74,7 @@ extern NSString * const TermViewAutoRepeateSeq;
 - (void)loadTerminalThemeJS:(NSString *)themeContent;
 - (void)loadTerminalFont:(NSString *)familyName fromCSS:(NSString *)cssPath;
 - (void)loadTerminalFont:(NSString *)familyName cssFontContent:(NSString *)cssContent;
+- (void)setCursorBlink:(BOOL)state;
+- (void)reset;
 
 @end

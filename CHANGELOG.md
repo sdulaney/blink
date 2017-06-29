@@ -1,3 +1,25 @@
+# Version 5.028.1
+	- Fixed Cmd+v shortcut
+	- HostKey fingerprint as base64 encoding
+	- Smoothing the HUD on resize or SplitView
+	- Empty default user configuration bugs.
+	- Zoom shortcuts changed.
+	- Solarized theme fixes.
+	
+# Version 4.024.2
+	- AirTerminals! Put a terminal on your remote AirPlay screen :)
+	- Blink shortcuts. Use your external keyboard to move, create, or remove terminals. Configure the trigger too! View settings > Keyboard > Shortcuts for more info.
+	- Want to use SmartKeys when an external keyboard is connected? Now you can switch them on and off from configuration.
+	- View geometry of the screen from the overlay with each resize.
+	- Switch cursor blinking on/off from Appearance settings.
+
+	- Fixed TouchID issues when returning to the app.
+	- Fixed cursor blink sequence so that it always starts as ON.
+	- Fixed Host Port not resetting properly.
+	- Fixed overlay getting covered in landscape mode.
+
+	- Smoother experience thanks to cleanups and improvements.
+
 # Version 3.021.2
 	- iCloud Hosts sync. Synchronize hosts between devices. If a Host already has been synced, it provides conflict resolution. No critical data like passwords is saved.
 	- Auto Lock. If enabled, when you lock/unlock your device, Blink will also be locked. Passcode and TouchID will be required to unlock the app.

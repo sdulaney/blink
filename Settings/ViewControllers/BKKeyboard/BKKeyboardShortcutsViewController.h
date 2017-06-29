@@ -29,13 +29,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+
 #import <UIKit/UIKit.h>
 
+@interface BKKeyboardShortcutsViewController : UITableViewController
 
-@interface SpaceController : UIViewController
-
-- (void)viewScreenWillBecomeActive;
-- (void)moveAllShellsFromSpaceController:(SpaceController *)spaceController;
-- (void)moveCurrentShellFromSpaceController:(SpaceController *)spaceController;
+@property (nonatomic, strong) NSArray *selectedObjects;
 
 @end

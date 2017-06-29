@@ -31,11 +31,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface SpaceController : UIViewController
-
-- (void)viewScreenWillBecomeActive;
-- (void)moveAllShellsFromSpaceController:(SpaceController *)spaceController;
-- (void)moveCurrentShellFromSpaceController:(SpaceController *)spaceController;
+@interface BKSmartKeysConfigViewController : UITableViewController
 
 @end

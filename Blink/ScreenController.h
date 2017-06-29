@@ -29,13 +29,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
+@interface ScreenController : NSObject
 
-@interface SpaceController : UIViewController
++ (ScreenController *)shared;
 
-- (void)viewScreenWillBecomeActive;
-- (void)moveAllShellsFromSpaceController:(SpaceController *)spaceController;
-- (void)moveCurrentShellFromSpaceController:(SpaceController *)spaceController;
+@property (nonatomic, readonly, strong) UIViewController *mainScreenRootViewController;
+
+- (void)setup;
+- (void)switchToOtherScreen;
+- (void)moveCurrentShellToOtherScreen;
+
 
 @end
